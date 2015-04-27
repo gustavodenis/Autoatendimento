@@ -13,9 +13,9 @@ GafisaApp.prototype = function () {
         $('#home').on('pagebeforecreate', $.proxy(_initHome, that));
         $('#home').on('pageshow', $.proxy(_initLoadHome, that));
 
-        ApplyLangStart();
+        //ApplyLangStart();
 
-        TestConnectivity();
+        //TestConnectivity();
 
         if (window.localStorage.getItem("userInfo") != null) {
             _login = true;
