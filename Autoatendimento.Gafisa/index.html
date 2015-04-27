@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- WP Support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0" />
+    <title>Gafisa</title>
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css" />
+    <!-- Phone 320x480 High DPI (aka Retina) -->
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <!-- Phone 480x800 Medium DPI (aka Samsung Galaxy S II Skyrocket) -->
+    <link rel="stylesheet" media="only screen and (min-device-width: 320px) and (max-device-width: 508px) and (-webkit-device-pixel-ratio:1.5)" href="css/phone-800.css" type="text/css" />
+    <!-- Tablet 768x1024 Low DPI (aka iPad 1 & 2") -->
+    <link rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio:1)" href="css/tablet-1024-ldpi.css" type="text/css" />
+    <!-- Phone 720x1280 High DPI (aka Google Nexus) -->
+    <link rel="stylesheet" media="only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (-webkit-device-pixel-ratio:2)" href="css/phone-1280.css" type="text/css" />
+    <link href="css/jqm-datebox-1.4.5.min.css" rel="stylesheet" />
+</head>
+<body onload="OnLoadMobile();">
+    <!-- home page -->
+    <div id="home" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" class="ui-nodisc-icon">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" id="menuList" class="ui-listview" data-inset="true">
+                <li><a href="#meugafisaPage" data-transition="slide"><img src="images/building.png" alt="Horas Normais" class="ui-li-icon ui-corner-none"><span id="meuGafisa">Meu Gafisa</span></a></li>
+                <li><a href="#ocorrenciaPage" data-transition="slide"><img src="images/protocolo.png" alt="Horas Normais" class="ui-li-icon ui-corner-none"><span id="protocolo">Protocolo de Atendimento</span></a></li>
+                <li><a href="#agendamentoPage" data-transition="slide"><img src="images/HorasNormais-24x24.png" alt="Horas Adicionais" class="ui-li-icon ui-corner-none"><span id="agendamento">Agendamentos</span></a></li>
+                <li><a href="#financialPage" id="hrAprove" data-transition="slide"><img src="images/posfinanceira.png" alt="Aprovação" class="ui-li-icon ui-corner-none"><span id="posFinanceira">Posição Financeira</span></a></li>
+                <li><a href="#settingPage" data-transition="slide"><img src="images/Ajustes_24x24.png" alt="Configurações" class="ui-li-icon ui-corner-none"><span id="settings">Configurações</span></a></li>
+                <li><a href="#aboutPage" data-transition="slide"><img src="images/Informacoes_24x24.png" alt="Sobre" class="ui-li-icon ui-corner-none"><span id="about">Sobre</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- logon page -->
+    <div id="logon" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <form id="login">
+                <span id="labelIS">CPF:</span>
+                <input type="text" id="is_stk" class="ForceNumeric RemoveEspecialCharacter" value="" />
+                <span id="labelPass">Senha:</span>
+                <input type="password" id="pass_stk" value="" />
+                <input type="submit" id="loginBtn" class="loginBtn" value="Login" data-icon="star" data-theme="b" />
+            </form>
+        </div>
+    </div>
+
+    <!-- Meu Gafisa page -->
+    <div id="meugafisaPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <h3 id="labelHourNormal">Meu Gafisa</h3>
+            <p><b>Empreendimento:</b></p>
+            <p>Vision Paulista - Torre 3 - Unidade 51</p>
+            <span>Linha do Tempo</span>
+            <div data-role="rangeslider" data-track-theme="b" data-theme="a">
+                <label for="range-3a" class="ui-hidden-accessible">Rangeslider:</label>
+                <input type="range" name="range-3a" id="range-3a" min="0" max="100" value="20" style="display:none;">
+                <label for="range-3b" class="ui-hidden-accessible">Rangeslider:</label>
+                <input type="range" name="range-3b" id="range-3b" min="0" max="100" value="100" style="display:none;">
+            </div>
+        </div>
+    </div>    
+    
+    <!-- Ocorrencia page -->
+    <div id="ocorrenciaPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <h3 id="labelHourNormal">Pesquisa Ocorrência</h3>
+            <ul id="listOccorencias" class="touch" data-role="listview" data-filter="true" data-filter-placeholder="" data-split-theme="c" data-split-icon="check"></ul>
+        </div>
+    </div>
+
+    <!-- Agendamentos page -->
+    <div id="agendamentoPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <h3 id="labelHourAditional">Agendamentos</h3>
+            <hr />
+            <div data-role="collapsible">
+                <h4>Personal Line</h4>
+                <p>Data: 20/05/2015</p>
+                <p>Quantidade de Convidado: 10</p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Bvu</h4>
+                <p>Data: 20/05/2015</p>
+                <p>Quantidade de Convidado: 10</p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Confirmação Medição</h4>
+                <p>Data: 20/05/2015</p>
+                <p>Quantidade de Convidado: 10</p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Confirmação RSVP</h4>
+                <p>Data: 20/05/2015</p>
+                <p>Quantidade de Convidado: 10</p>
+            </div>
+        </div>
+        <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a id="btnAgendar" href="#" data-transition="pop" data-icon="plus">Agendar</a></li>
+                    <li><a id="btnCancelHour" href="#" data-rel="back" data-transition="pop" data-icon="back">Cancelar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Posição Financeira page -->
+    <div id="financialPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <ul class="touch" data-role="listview" data-inset="true">
+                <li>
+                    <a href="#">
+                        <h2>Parcelas em Atraso</h2>
+                        <p><strong>Visualize as parcelas em atraso do seu Gafisa!</strong></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>Segunda Via de Boleto</h2>
+                        <p><strong>Receba o código de barras no seu celular;</strong></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>Extrato Financeiro</h2>
+                        <p><strong>Visualize seu extrato completo de pagamentos;</strong></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ajustes page -->
+    <div id="settingPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <p><span id="labelUser">Nome Usuário:</span></p>
+            <p><span id="UserName"></span></p>
+            <hr />
+            <p><span id="label_Lang">Idioma:</span></p>
+            <p><a href="#" id="btnLangPT"><img src="images/BandeiraBr.png" alt="" style="width:30px;" /></a><a href="#" id="btnLangEN"><img src="images/BandeiraGB.png" alt="" style="width:30px;" /></a><a href="#" id="btnLangSP"><img src="images/BandeiraSpain.png" alt="" style="width:30px;" /></a></p>
+            <hr />
+            <a href="#" id="btnLogoff" class="ui-btn ui-btn-icon-left ui-icon-power">Logoff</a>
+        </div>
+        <div data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <p><span id="label_DevName">Gafisa Mobile - v1.0</span></p>
+        </div>
+    </div>
+
+    <div id="aboutPage" data-role="page" data-mini="true">
+        <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+            <a href="#home"><img style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px; float: left; background:transparent; border:none;" alt="img" src="images/Menu_24x24.png"></a>
+            <img style="margin-left: 45%; margin-top: 10px; margin-bottom: 5px; float: left; height:26px; width:31px;" alt="img" src="images/gafisa.png">
+        </div>
+        <div role="main" class="ui-content">
+            <p>Versão: 1.0</p>
+            <p>Descrição:</p>
+            <p>Este aplicativo é de uso exclusivo de clientes Gafisa.</p>
+            <p><a class="ui-btn ui-icon-mail ui-btn-icon-left" href="mailto:gustavo.denis@softtek.com">Suporte!</a></p>
+        </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="scripts/jquery-1.11.2.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+    <script src="scripts/jquery.mobile.datebox.js"></script>
+    <script src="scripts/index.js"></script>
+    <script>
+        //Jquery Configs
+        $.mobile.defaultHomeScroll = 0;
+        jQuery.support.cors = true;
+        $.ajaxSetup({ cache: false });
+
+        function OnLoadMobile() {
+            document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+        }
+
+        function onDeviceReady() {
+            document.addEventListener('pause', onPause.bind(this), false);
+            document.addEventListener('resume', onResume.bind(this), false);
+        };
+
+        function onPause() {
+            // TODO: This application has been suspended. Save application state here.
+        };
+
+        function onResume() {
+            // TODO: This application has been reactivated. Restore application state here.
+        };
+
+        var Gafisax = new GafisaApp();
+        Gafisax.run();
+
+    </script>
+</body>
+</html>
