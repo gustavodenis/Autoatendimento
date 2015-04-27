@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id="Softtek.Mobile.App"
+    id="com.gafisa.mobile"
     version="1.0.0.0">
-  <name>Softtek Mobile App</name>
+  <name>Gafisa</name>
   <description>
-    Aplicação para funcionários da Softtek.
+    Este aplicativo é de uso exclusivo de clientes Gafisa.
   </description>
   <author href="http://www.softtek.com" email="gustavo.denis@softtek.com">
     Gustavo Denis
@@ -38,8 +38,6 @@
   <gap:plugin name="org.apache.cordova.globalization" />
   <gap:plugin name="org.apache.cordova.device" />
   <gap:plugin name="org.apache.cordova.network-information" />
-  <!--<gap:plugin name="com.brodysoft.sqliteplugin" />-->
-  <!--<gap:plugin name="it.witek.cordova.plugin.background-mode" />-->
 
   <gap:platform name="ios" />
   <gap:platform name="android" />
@@ -95,8 +93,8 @@
   <gap:splash src="App_Resources/winphone/splash.jpg"               gap:platform="winphone" /> <!-- 768x1024 -->
 
   <access origin="*" />
-  <access origin="*.softtek.com" />
-  <access origin="https://intrasoft.softtek.com" subdomains="true" />
+  <access origin="*.gafisa.com.br" />
+  <access origin="http://www.gafisa.com.br" subdomains="true" />
   <access origin="http://127.0.0.1*"/>
 
 </widget>
